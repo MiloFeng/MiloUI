@@ -1,0 +1,10 @@
+@import "../variable";
+@import "../mixins/rem";
+
+@each $responsive in $responsives {
+  @media only screen and (max-width: #{$responsive}) {
+    html {
+      @include rem($responsive);
+    }
+  }
+}

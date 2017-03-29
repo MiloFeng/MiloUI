@@ -1,0 +1,4 @@
+@import "../variable";
+@mixin rem($values){
+  font-size: $values * $base-fontSize / $psd-size;
+}

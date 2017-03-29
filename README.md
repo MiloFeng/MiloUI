@@ -1,37 +1,68 @@
-## Welcome to GitHub Pages
+[TOC]
 
-You can use the [editor on GitHub](https://github.com/MiloFeng/MiloUI/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# 目前总结的是工作中最常涉及到的底层样式
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- normalize
+    - reset样式。[原作者](https://github.com/necolas/normalize.css)
+    - 修改地方
+        - html 增加作者公司常用字体,添加 -webkit-font-smoothing: antialiased;
+        - 移除<hgroup>
+        - img默认垂直居中 vertical-align: middle;
+        - 将header,footer,main,aside等元素设置为块属性
+        - 所有元素都设置box-sizing:border-box
+- base
+    - center: 水平居中
+    - hide: 隐藏元素(display:none)
+    - hidden：隐藏元素(visibility:hidden)
+    - fl: 左浮动
+    - fr：有浮动
+    - text-left:文字左对齐
+    - text-right:文字右对齐
+    - text-center：文字居中对齐
+    
+    ```html
+    <div class="center">
+      <div class="fl"><p class="text-right">这里的文字右对齐</p></div>
+      <div class="fr"><p class="text-left">这里的文字左对齐</p></div>
+      <p class="hidden">这里的文字不显示，但是起到占位作用</p>
+      <p class="hide">这里的文字不显示并且不占位</p>
+    </div>
+    ```
+    
+- box-sizing
+    
+    ```scss
+        @include box-sizing();
+     ```
 
-### Markdown
+- clearfix
+    ```scss
+        @include clearfix();
+     ```
+    
+- keyframe
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    ```scss
+    @include keyframes(animate1) {
+      from {
+        
+      }
+      to {
+    
+      }
+    }
+  
+    .object {
+      @include animation('animate1' 1s infinite 1s);
+    }
+    ```
+    
+- text-ellipsis
+   ```scss
+       @include text-ellipsis();
+    ```
+    
+    
+- px2rem 计算移动端字体，将px转换成rem
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MiloFeng/MiloUI/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- responsive 移动端适配，如果不做移动端，_func中可以不引用px2rem和resonsive两个文件

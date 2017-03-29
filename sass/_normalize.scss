@@ -1,0 +1,57 @@
+* {
+  @include box-sizing();
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif, Serif, SimSun, Times New Roman, 'Microsoft Yahei', 'Hiragino Sans GB';
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary, audio, canvas, progress, video {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  &:active, &:hover {
+    outline-width: 0;
+    text-decoration: none;
+  }
+}
+
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+
+button, input, optgroup, select, textarea {
+  font: inherit;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+}
